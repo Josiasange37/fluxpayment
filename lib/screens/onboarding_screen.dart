@@ -81,12 +81,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       await widget.apiService.disconnectWhatsApp();
       await _checkBotStatus();
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to disconnect: $e')),
-      );
-      setState(() {
-        _isLoadingStatus = false;
-      });
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to disconnect: $e')),
+        );
+        setState(() {
+          _isLoadingStatus = false;
+        });
+      }
     }
   }
 

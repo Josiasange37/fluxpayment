@@ -382,7 +382,7 @@ class _MetricCardsSection extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         itemCount: cards.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 12),
+        separatorBuilder: (_, _) => const SizedBox(width: 12),
         itemBuilder: (context, i) {
           final c = cards[i];
           return Container(
@@ -540,7 +540,7 @@ class _RevenueChartSectionState extends State<_RevenueChartSection> {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: _ranges.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 6),
+                separatorBuilder: (_, _) => const SizedBox(width: 6),
                 itemBuilder: (context, i) {
                   final r = _ranges[i];
                   final selected = r == _selectedRange;
@@ -728,7 +728,7 @@ class _WatchlistSection extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   itemCount: items.length,
-                  separatorBuilder: (_, __) => const SizedBox(width: 10),
+                  separatorBuilder: (_, _) => const SizedBox(width: 10),
                   itemBuilder: (context, i) {
                     final item = items[i];
                     return Container(
