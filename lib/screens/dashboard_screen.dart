@@ -134,10 +134,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
     };
     for (final p in plans) {
       final days = p['interval_days'] ?? 30;
-      if (days <= 1) segments['Daily'] = (segments['Daily'] ?? 0) + 1;
-      else if (days <= 7) segments['Weekly'] = (segments['Weekly'] ?? 0) + 1;
-      else if (days <= 31) segments['Monthly'] = (segments['Monthly'] ?? 0) + 1;
-      else segments['Annual'] = (segments['Annual'] ?? 0) + 1;
+      if (days <= 1) {
+        segments['Daily'] = (segments['Daily'] ?? 0) + 1;
+      } else if (days <= 7) {
+        segments['Weekly'] = (segments['Weekly'] ?? 0) + 1;
+      } else if (days <= 31) {
+        segments['Monthly'] = (segments['Monthly'] ?? 0) + 1;
+      } else {
+        segments['Annual'] = (segments['Annual'] ?? 0) + 1;
+      }
     }
     final total = segments.values.fold(0, (a, b) => a + b);
     if (total == 0) return [];
